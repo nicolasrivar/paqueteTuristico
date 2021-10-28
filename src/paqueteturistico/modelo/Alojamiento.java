@@ -18,8 +18,13 @@ public class Alojamiento {
     private float precioNoche;
     boolean activo;
 
-    public Alojamiento(Destino Destino, String ubicacion, String nombreAlojamiento, String tipoAlojamiento, float precioNoche, boolean activo) {
-        this.Destino = Destino;
+
+    public Alojamiento() {
+    }
+
+    public Alojamiento(int idAlojamiento, int idDestino, String ubicacion, String nombreAlojamiento, String tipoAlojamiento, float precioNoche, boolean activo) {
+        this.idAlojamiento = idAlojamiento;
+        this.idDestino = idDestino;
         this.ubicacion = ubicacion;
         this.nombreAlojamiento = nombreAlojamiento;
         this.tipoAlojamiento = tipoAlojamiento;
@@ -27,12 +32,8 @@ public class Alojamiento {
         this.activo = activo;
     }
 
-    public Alojamiento() {
-    }
-
-    public Alojamiento(int idAlojamiento, Destino Destino, String ubicacion, String nombreAlojamiento, String tipoAlojamiento, float precioNoche, boolean activo) {
-        this.idAlojamiento = idAlojamiento;
-        this.Destino = Destino;
+    public Alojamiento(int idDestino, String ubicacion, String nombreAlojamiento, String tipoAlojamiento, float precioNoche, boolean activo) {
+        this.idDestino = idDestino;
         this.ubicacion = ubicacion;
         this.nombreAlojamiento = nombreAlojamiento;
         this.tipoAlojamiento = tipoAlojamiento;
@@ -48,12 +49,12 @@ public class Alojamiento {
         this.idAlojamiento = idAlojamiento;
     }
 
-    public Destino getDestino() {
-        return Destino;
+    public int getIdDestino() {
+        return idDestino;
     }
 
-    public void setDestino(Destino Destino) {
-        this.Destino = Destino;
+    public void setIdDestino(int idDestino) {
+        this.idDestino = idDestino;
     }
 
     public String getUbicacion() {
@@ -95,4 +96,9 @@ public class Alojamiento {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
+    
+    
+
+    
+    
 }
