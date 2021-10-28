@@ -11,7 +11,7 @@ package paqueteturistico.modelo;
  */
 public class Menu {
     private int idMenu;
-    private Alojamiento alojamiento;
+    private int idAlojamiento;
     private String tipoMenu;
     private int precioMenu;
     private boolean activo;

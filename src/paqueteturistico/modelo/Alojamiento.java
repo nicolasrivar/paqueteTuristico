@@ -11,7 +11,7 @@ package paqueteturistico.modelo;
  */
 public class Alojamiento {
     private int idAlojamiento;
-    private Destino Destino;
+    private int idDestino;
     private String ubicacion;
     private String nombreAlojamiento;
     private String tipoAlojamiento;
