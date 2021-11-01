@@ -76,7 +76,11 @@ public class Menu {
         this.activo = activo;
     }
     
-    
+    @Override
+    public String toString(){
+        return "Tipo de Menu= " + tipoMenu + ", Precio de Menu = " + precioMenu + "\n";
+
+    }
     
     
 }
