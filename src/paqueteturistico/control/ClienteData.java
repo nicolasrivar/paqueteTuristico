@@ -71,6 +71,7 @@ public class ClienteData {
             ps.setDouble(3, cliente.getDni());
             ps.setLong(4, cliente.getTelefono());
             ps.setBoolean(5, cliente.isActivo());
+            ps.setInt(6,cliente.getIdCliente() );
             
             ps.executeUpdate();
             
