@@ -11,7 +11,7 @@ package paqueteturistico.modelo;
  */
 public class Cliente {
     private int idCliente;
-    private String NombreCompleto;
+    private String nombreCompleto;
     private String email;
     private double dni;
     private long telefono;
@@ -21,7 +21,7 @@ public class Cliente {
     }
 
     public Cliente(String NombreCompleto, String email, double dni, long telefono, boolean activo) {
-        this.NombreCompleto = NombreCompleto;
+        this.nombreCompleto = NombreCompleto;
         this.email = email;
         this.dni = dni;
         this.telefono = telefono;
@@ -30,7 +30,7 @@ public class Cliente {
 
     public Cliente(int idCliente, String NombreCompleto, String email, double dni, long telefono, boolean activo) {
         this.idCliente = idCliente;
-        this.NombreCompleto = NombreCompleto;
+        this.nombreCompleto = NombreCompleto;
         this.email = email;
         this.dni = dni;
         this.telefono = telefono;
@@ -46,11 +46,11 @@ public class Cliente {
     }
 
     public String getNombreCompleto() {
-        return NombreCompleto;
+        return nombreCompleto;
     }
 
     public void setNombreCompleto(String NombreCompleto) {
-        this.NombreCompleto = NombreCompleto;
+        this.nombreCompleto = NombreCompleto;
     }
 
     public String getEmail() {

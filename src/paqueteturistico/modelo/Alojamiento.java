@@ -97,6 +97,12 @@ public class Alojamiento {
         this.activo = activo;
     }
     
+    @Override
+    public String toString(){
+        return "Nombre Alojamiento= " + nombreAlojamiento + ", Ubicacion= " + ubicacion + ", Tipo de Alojamiento= " + tipoAlojamiento + ", Precio por Noche= " + precioNoche + "\n";
+
+    }
+            
     
 
     
