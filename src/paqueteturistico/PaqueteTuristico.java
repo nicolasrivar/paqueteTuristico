@@ -16,6 +16,45 @@ public class PaqueteTuristico {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    }
+        Conexion conexion ;
+        
+          try {
+            conexion = new Conexion();
+            ClienteData cd=new ClienteData(conexion);
+        
+            Cliente c1=new Cliente("Castro Jorge", "castroJ@gmail.com",25032406,265723143,true);
+            Cliente c2=new Cliente("Prueba Aldo", "aldop@gmail.com",30254141,014467741,true);
+            Cliente c3=new Cliente("Petra Carla", "pcarla@gmail.com",164254126,265741312,true);
+            Cliente c4=new Cliente("Zenco Roberto", "zerobert@gmail.com",18365449,266235499,true);
+       
+            Destino d1=new Destino("Argentina","Rio Gallegos");
+            Destino d2=new Destino("Chile","Santiago");
+            Destino d3=new Destino("Argentina","Formosa");
+            Destino d4=new Destino("Mexico","Tulum");
+        
+//            System.out.println(cd.buscarDestino(1));
+//              System.out.println(cd.buscarAlojamiento(3));
+//              System.out.println(cd.buscarPaquete());
+//              cd.guardarCliente(c2);
+//              cd.guardarCliente(c1);
+//              cd.guardarCliente(c3);
+//              cd.guardarCliente(c4);
+              
+               
+             // c1.setDni(25032404);
+//              c1.setNombreCompleto("Castro Jorge Luis");
+//              cd.actualizarCliente(c1);
+//              System.out.println(c1);
+
+              System.out.println(cd.buscarCliente(1));
+              
+             
+        
+    } catch (ClassNotFoundException ex) {
+            Logger.getLogger(PaqueteTuristico.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+}
+    
     
 }
