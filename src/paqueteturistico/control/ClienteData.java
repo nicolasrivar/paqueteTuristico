@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import paqueteturistico.modelo.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -83,6 +85,39 @@ public class ClienteData {
     
     }
     
+    public List<Cliente> obtenerClientes(){
+    List<Cliente> clientes= new ArrayList<>();
+        
+    Cliente cliente=null;
+    
+    String sql="SELECT * FROM cliente";
+    
+        try {
+            PreparedStatement ps= con.prepareStatement(sql);
+                       
+            ResultSet rs =ps.executeQuery();
+            while (rs.next()){
+                cliente = new Cliente();
+               
+                cliente.setIdCliente(rs.getInt("idCliente"));
+                cliente.setNombreCompleto(rs.getString("nombreCompleto"));
+                cliente.setEmail(rs.getString("email"));
+                cliente.setDni(rs.getLong("dni"));
+                cliente.setTelefono(rs.getLong("telefono"));
+                cliente.setActivo(rs.getBoolean("activo"));
+                clientes.add(cliente);
+                
+            }          
+            
+            ps.close();
+            
+        } catch (SQLException ex) {
+            System.out.println("Error al buscar lista clientes ");
+        }    
+       return clientes;    
+       
+    }
+    
     public Cliente buscarCliente(int id){ // se busca a Cliente por id
     Cliente cliente=null;
     
@@ -118,6 +153,7 @@ public class ClienteData {
         try {
             PreparedStatement ps= con.prepareStatement(sql);
             ps.setInt(1, id);
+            ps.executeUpdate();
        
     
         } catch (SQLException ex) {
