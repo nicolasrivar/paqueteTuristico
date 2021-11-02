@@ -5,6 +5,14 @@
  */
 package paqueteturistico;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import paqueteturistico.control.ClienteData;
+import paqueteturistico.modelo.Cliente;
+import paqueteturistico.modelo.Conexion;
+import paqueteturistico.modelo.Destino;
+
+
 /**
  *
  * @author Nicolas
@@ -32,7 +40,7 @@ public class PaqueteTuristico {
             Destino d3=new Destino("Argentina","Formosa");
             Destino d4=new Destino("Mexico","Tulum");
         
-//            System.out.println(cd.buscarDestino(1));
+ System.out.println(cd.buscarDestino(1));
 //              System.out.println(cd.buscarAlojamiento(3));
 //              System.out.println(cd.buscarPaquete());
 //              cd.guardarCliente(c2);
@@ -43,10 +51,13 @@ public class PaqueteTuristico {
                
              // c1.setDni(25032404);
 //              c1.setNombreCompleto("Castro Jorge Luis");
+                c1.setTelefono(265722111);
+                cd.actualizarCliente(c1);
 //              cd.actualizarCliente(c1);
 //              System.out.println(c1);
-
-              System.out.println(cd.buscarCliente(1));
+                cd.borrarCliente(2);
+               //System.out.println(cd.obtenerClientes());
+              //System.out.println(cd.buscarCliente(2));
               
              
         
@@ -55,6 +66,4 @@ public class PaqueteTuristico {
         }
     
 }
-    
-    
 }
