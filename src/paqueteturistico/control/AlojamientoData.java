@@ -69,4 +69,34 @@ public class AlojamientoData {
         
     }
     
+    public Alojamiento obtenerAlojamiento(int id){
+        Alojamiento aloj=null;
+    
+    String sql="SELECT * FROM alojamiento WHERE idAlojamiento = ?";
+    
+        try {
+            PreparedStatement ps= con.prepareStatement(sql);
+            ps.setInt(1, id);
+            
+            ResultSet rs =ps.executeQuery();
+            if (rs.next()){
+                aloj = new Alojamiento();
+                aloj.setIdAlojamiento(rs.getInt("idAlojamiento"));
+                aloj.setIdDestino(rs.getInt(2));
+                aloj.setUbicacion(rs.getString(3));
+                aloj.setNombreAlojamiento(rs.getString(4));
+                aloj.setTipoAlojamiento(rs.getString(5));
+                aloj.setPrecioNoche(rs.getFloat(6));
+                aloj.setActivo(rs.getBoolean(7));
+            }
+            
+            
+            
+            
+        } catch (SQLException ex) {
+            System.out.println("Error al buscar el alojamiento" + ex);
+        }    
+       return aloj;  
+   }
+    
 }
