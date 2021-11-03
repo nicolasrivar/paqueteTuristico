@@ -13,7 +13,7 @@ public class Menu {
     private int idMenu;
     private int idAlojamiento;
     private String tipoMenu;
-    private int precioMenu;
+    private float precioMenu;
     private boolean activo;
 
     
@@ -21,14 +21,14 @@ public class Menu {
     public Menu() {
     }
 
-    public Menu(int idAlojamiento, String tipoMenu, int precioMenu, boolean activo) {
+    public Menu(int idAlojamiento, String tipoMenu, float precioMenu, boolean activo) {
         this.idAlojamiento = idAlojamiento;
         this.tipoMenu = tipoMenu;
         this.precioMenu = precioMenu;
         this.activo = activo;
     }
 
-    public Menu(int idMenu, int idAlojamiento, String tipoMenu, int precioMenu, boolean activo) {
+    public Menu(int idMenu, int idAlojamiento, String tipoMenu, float precioMenu, boolean activo) {
         this.idMenu = idMenu;
         this.idAlojamiento = idAlojamiento;
         this.tipoMenu = tipoMenu;
@@ -60,11 +60,11 @@ public class Menu {
         this.tipoMenu = tipoMenu;
     }
 
-    public int getPrecioMenu() {
+    public float getPrecioMenu() {
         return precioMenu;
     }
 
-    public void setPrecioMenu(int precioMenu) {
+    public void setPrecioMenu(float precioMenu) {
         this.precioMenu = precioMenu;
     }
 
