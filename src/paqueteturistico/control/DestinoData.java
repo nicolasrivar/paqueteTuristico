@@ -32,6 +32,37 @@ public class DestinoData {
         }
     
     }
+    
+    public List<Destino> obtenerDestinos(){ //buscar destinos
+        List<Destino> destinos=new ArrayList<>();
+        
+        Destino destino=null;
+        
+        String sql="SELECT * FROM `destino` ";
+        
+        try {
+            PreparedStatement ps= con.prepareStatement(sql);
+                   
+            ResultSet rs =ps.executeQuery();
+            
+            while (rs.next()){
+                destino = new Destino();
+                destino.setIdDestino(rs.getInt("idDestino"));
+                destino.setPaisDestino(rs.getString("paisDestino"));
+                destino.setCiudadDestino(rs.getString("ciudadDestino"));
+                destino.setActivo(rs.getBoolean("activo"));
+                destinos.add(destino);
+
+            }          
+            
+            ps.close();
+            
+        } catch (SQLException ex) {
+            System.out.println("Error al buscar Destino ");
+        }    
+       return destinos; 
+        
+    }
 
     
     public List<Destino> buscarDestino(int idDestino){ //buscar Pais destino por Id
