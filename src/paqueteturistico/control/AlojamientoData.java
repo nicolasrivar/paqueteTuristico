@@ -121,5 +121,25 @@ public class AlojamientoData {
         } catch (SQLException ex) {
             System.out.println("Error al insertar "+ex);
         }
-    }    
+    }
+
+    public void actualizarAlojamiento(Alojamiento alojamiento){
+        String sql = "UPDATE alojamiento SET idDestino=?, ubicacion=?, nombreAlojamiento=? ,tipoAlojamiento=?, precioNoche=?, activo=? WHERE idAlojamiento=?";
+        
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, alojamiento.getIdDestino());
+            ps.setString(2, alojamiento.getUbicacion());
+            ps.setString(3, alojamiento.getNombreAlojamiento());
+            ps.setString(4, alojamiento.getTipoAlojamiento());
+            ps.setFloat(5, alojamiento.getPrecioNoche());
+            ps.setBoolean(6,alojamiento.isActivo() );
+            ps.setInt(7, alojamiento.getIdAlojamiento());
+            ps.executeUpdate();           
+            ps.close();
+        } catch (SQLException ex) {
+            System.out.println("Error al modificar "+ex);
+        }
+    }
 }
