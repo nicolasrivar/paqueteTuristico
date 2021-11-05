@@ -33,16 +33,15 @@ public class AlojamientoData {
     
     }
     
-    public List<Alojamiento> buscarAlojamiento(int idAlojamiento){//buscar Alojamientos por Id
+    public List<Alojamiento> buscarAlojamientos(){
         List<Alojamiento> alojamientos=new ArrayList<>();
         
         Alojamiento alojamiento=null;
         
-        String sql="SELECT * FROM alojamiento WHERE idAlojamiento=?";
+        String sql="SELECT * FROM alojamiento ";
         
         try {
             PreparedStatement ps= con.prepareStatement(sql);
-            ps.setInt(1, idAlojamiento);
             ResultSet rs =ps.executeQuery();
             
             while (rs.next()){
@@ -98,5 +97,9 @@ public class AlojamientoData {
         }    
        return aloj;  
    }
+    
+    public void agregarAlojamiento(){
+        
+    }
     
 }
