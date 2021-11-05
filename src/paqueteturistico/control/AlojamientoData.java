@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import paqueteturistico.modelo.Alojamiento;
@@ -98,8 +99,27 @@ public class AlojamientoData {
        return aloj;  
    }
     
-    public void agregarAlojamiento(){
+    public void agregarAlojamiento(Alojamiento alojamiento){
+        String sql = "INSERT INTO alojamiento (idDestino, ubicacion, nombreAlojamiento, tipoAlojamiento, precioNoche, activo) VALUES (?,?,?,?,?,?)";
         
-    }
-    
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, alojamiento.getIdDestino());
+            ps.setString(2, alojamiento.getUbicacion());
+            ps.setString(3, alojamiento.getNombreAlojamiento());
+            ps.setString(4, alojamiento.getTipoAlojamiento());
+            ps.setFloat(5, alojamiento.getPrecioNoche());
+            ps.setBoolean(6, alojamiento.isActivo());
+                     
+            ps.executeUpdate();
+            ResultSet rs= ps.getGeneratedKeys(); //recupero el idMateria
+            if (rs.next()){
+             alojamiento.setIdAlojamiento(rs.getInt(1));
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            System.out.println("Error al insertar "+ex);
+        }
+    }    
 }
