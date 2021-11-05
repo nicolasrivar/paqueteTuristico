@@ -25,6 +25,12 @@ public class Transporte {
         this.activo = activo;
     }
 
+    @Override
+    public String toString() {
+        return "Transporte{" + "idTransporte=" + idTransporte + ", tipoTransporte=" + tipoTransporte + '}';
+    }
+
+
     public Transporte(int idTransporte, int idDestino, float precioViaje, String tipoTransporte, boolean activo) {
         this.idTransporte = idTransporte;
         this.idDestino = idDestino;

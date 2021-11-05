@@ -17,7 +17,13 @@ public class Destino {
     public Destino() {
     }
 
-    public Destino(String paisDestino, String ciudedDestino, boolean activo) {
+    @Override
+    public String toString() {
+        return "Destino{" + "idDestino=" + idDestino + ", ciudadDestino=" + ciudadDestino + '}';
+    }
+
+   
+   public Destino(String paisDestino, String ciudedDestino, boolean activo) {
         this.paisDestino = paisDestino;
         this.ciudadDestino = ciudedDestino;
         this.activo = activo;
