@@ -113,7 +113,7 @@ public class AlojamientoData {
             ps.setBoolean(6, alojamiento.isActivo());
                      
             ps.executeUpdate();
-            ResultSet rs= ps.getGeneratedKeys(); //recupero el idMateria
+            ResultSet rs= ps.getGeneratedKeys(); 
             if (rs.next()){
              alojamiento.setIdAlojamiento(rs.getInt(1));
             }
