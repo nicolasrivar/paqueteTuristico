@@ -40,7 +40,7 @@ public class TransporteData {
         
         Transporte transporte=null;
         
-        String sql="SELECT * FROM `transporte` ";
+        String sql="SELECT * FROM transporte ";
         
         try {
             PreparedStatement ps= con.prepareStatement(sql);

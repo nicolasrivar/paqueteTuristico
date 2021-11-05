@@ -23,6 +23,11 @@ public class Destino {
         this.activo = activo;
     }
 
+    public Destino(String paisDestino, String ciudadDestino) {
+        this.paisDestino = paisDestino;
+        this.ciudadDestino = ciudadDestino;
+    }
+
     public Destino(int idDestino, String paisDestino, String ciudedDestino, boolean activo) {
         this.idDestino = idDestino;
         this.paisDestino = paisDestino;
