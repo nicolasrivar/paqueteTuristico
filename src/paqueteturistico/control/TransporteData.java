@@ -38,7 +38,7 @@ public class TransporteData {
     
 }
     
-    public List<Transporte> obtenerTransportes(){ 
+    public List<Transporte> obtenerTransporte(){ 
         List<Transporte> transportes=new ArrayList<>();
         
         Transporte transporte=null;
