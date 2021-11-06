@@ -85,7 +85,7 @@ public class ClienteData {
     
     }
     
-    public List<Cliente> obtenerClientes(){
+    public List<Cliente> buscarClientes(){
     List<Cliente> clientes= new ArrayList<>();
         
     Cliente cliente=null;
@@ -118,7 +118,7 @@ public class ClienteData {
        
     }
     
-    public Cliente buscarCliente(int id){ // se busca a Cliente por id
+    public Cliente obtenerCliente(int id){ // se busca a Cliente por id
     Cliente cliente=null;
     
     String sql="SELECT * FROM cliente WHERE idCliente=?";
