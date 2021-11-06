@@ -28,18 +28,24 @@ public class PaqueteTuristico {
     public static void main(String[] args) {
       Conexion conexion=null;
       Transporte t1=new Transporte(1,50000," tren ",true);
+      Destino d1=new Destino("Colombia", "bogota", true);
      DestinoData dd;
      TransporteData td; 
         try {
+           
            conexion = new Conexion();
            dd= new DestinoData(conexion) ;
-           td = new TransporteData(conexion); 
-            System.out.println(dd.buscarDestino(1).getCiudedDestino());  
-            System.out.println(dd.obtenerDestinos());
+           td = new TransporteData(conexion);
+           d1.setCiudadDestino("bogota");
+            System.out.println(d1.getIdDestino());
+         /*   System.out.println(dd.buscarDestino(1).getCiudedDestino());  
+            
             System.out.println(td.obtenerTransporte(1).getTipoTransporte());
             System.out.println(td.obtenerTransportes());
-            System.out.println(td.obtenerTransportesDestino(1));
-            td.guardarTransporte(t1);
+            System.out.println(td.obtenerTransportesDestino(1));*/
+            System.out.println(dd.obtenerDestinos());
+            
+            System.out.println(dd.obtenerDestinos());
             System.out.println(td.obtenerTransportesDestino(1));
         } catch (ClassNotFoundException ex) {
             System.out.println("error en el tri"+ex );

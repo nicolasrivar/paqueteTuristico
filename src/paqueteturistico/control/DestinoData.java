@@ -157,7 +157,7 @@ public class DestinoData {
     }
     
     public void modificarDestino(Destino d1){
-       String sql = "UPDATE destino SET paisDestino=?, ciudadDestino=?, activo=? WHERE idDestino=?"; 
+       String sql = "UPDATE destino SET paisDestino = ?, ciudadDestino = ?, activo = ? WHERE destino.idDestino =?"; 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, d1.getPaisDestino());
@@ -166,6 +166,7 @@ public class DestinoData {
             ps.setInt(4, d1.getIdDestino());
             ps.executeUpdate();
             ps.close();
+           
         } catch (SQLException ex) {
             System.out.println("Error al modificar destino "+ex);
         } 

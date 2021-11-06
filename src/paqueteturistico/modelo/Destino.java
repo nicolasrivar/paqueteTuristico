@@ -19,8 +19,10 @@ public class Destino {
 
     @Override
     public String toString() {
-        return "Destino{" + "idDestino=" + idDestino + ", ciudadDestino=" + ciudadDestino + '}';
+        return "Destino{" + "idDestino=" + idDestino + ", ciudadDestino=" + ciudadDestino + ", activo=" + activo + '}';
     }
+
+   
 
    
    public Destino(String paisDestino, String ciudedDestino, boolean activo) {
