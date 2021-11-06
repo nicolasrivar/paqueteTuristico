@@ -154,7 +154,7 @@ public class TransporteData {
             
     
         } catch (SQLException ex) {
-            System.out.println("Error al eliminar ");
+            System.out.println("Error al eliminar transporte . "+ex);
         } 
     }
     
@@ -173,7 +173,7 @@ public class TransporteData {
     }
     
     public void ModificarTransporte(Transporte t1){
-        String sql = "UPDATE alumno SET idDestino=?, tipoTransporte=?, precioViaje=?, activo=? WHERE idAlumno=?";
+        String sql = "UPDATE transporte SET idDestino=?, tipoTransporte=?, precioViaje=?, activo=? WHERE idTransporte=?";
         
         
         try {
@@ -182,7 +182,7 @@ public class TransporteData {
             ps.setString(2, t1.getTipoTransporte());
             ps.setFloat(3, t1.getPrecioViaje());
             ps.setBoolean(4, t1.isActivo());
-            ps.setInt(6, t1.getIdTransporte());
+            ps.setInt(5, t1.getIdTransporte());
             ps.executeUpdate();
             ps.close();
         } catch (SQLException ex) {
